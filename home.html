@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+* {box-sizing: border-box}
+body {font-family: Georgia, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 17px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: left;
+}
+
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+.slideshow-container > .mySlides > img {
+	width:100%;
+	height: 500px !important;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#logo
+{
+  width:30% !important;
+	height: 30% !important;
+}
+
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: gray;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: gray;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content > a
+{
+  font-size: 13px;
+}
+
+
+</style>
+  <body>
+
+<div class="w3-top" >
+  <div class="topnav">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home"><img src="images/logo.png" id="logo"></a>
+    <div class="dropdown">
+    <button class="dropbtn">Main Menu
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a href="#home" class="w3-button">HOME</a>
+    <a href="#aboutus" class="w3-button" onclick="toggleFunction()">ABOUT US</a>
+    <a href="#howitworks" class="w3-button" onclick="toggleFunction()">HOW IT WORKS</a>
+    <a href="#contactus" class="w3-button" onclick="toggleFunction()">CONTACT US</a>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+<div class="w3-content w3-container w3-padding-64" id="home">
+    <div class="slideshow-container">
+    <div class="mySlides fade">
+
+      <img src="images/3dcubes.jpg">
+      <div class="text">Green 3D Cubes</div>
+    </div>
+
+    <div class="mySlides fade">
+
+      <img src="images/pebble.jpeg">
+      <div class="text">Pebble</div>
+    </div>
+
+    <div class="mySlides fade">
+
+      <img src="images/bubble.jpg">
+      <div class="text">transparent Bubble</div>
+    </div>
+
+            <div class="mySlides fade">
+
+              <img src="images/car.jpg">
+              <div class="text">Car</div>
+            </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+  </div>
+    <br>
+
+
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+
+    }
+    </script>
+
+
+
+<div class="w3-content w3-container w3-padding-64 topnav-active" id="aboutus">
+  <h3 class="w3-center active">ABOUT US</h3>
+  <h3>Hello all , I am Ravi.</h3>
+  <h3> Welcome to my website . </h3>
+  <h3> Here is a little peek to my work.</h3>
+  <h3>Hope you like it. </h3>
+  <h3>Thank you all.</h3>
+  </div>
+
+
+  <div class="w3-content w3-container w3-padding-64" id="howitworks">
+    <h3 class="w3-center">HOW IT WORKS</h3>
+    <h3> First you need to sign up to the website and then login by entering correct credentials.</h3>
+    <h3> You can enjoy all the services provided by us at best possible rate. </h3>
+    </div>
+
+
+
+<div class="w3-content w3-container w3-padding-64" id="contactus">
+  <h3 class="w3-center">CONTACT US</h3>
+
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m8 w3-panel">
+      <form action="https://gmail.com/" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+           &nbsp&nbsp&nbsp <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+           &nbsp&nbsp&nbsp <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>&nbsp&nbsp&nbsp
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">&nbsp&nbsp
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <div class="w3-xlarge w3-section">
+    <h3>Ravi Varma</h3>
+  <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> IIIT Guwahati, Ambari, Guwahati, Assam, India<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +91 8309237656<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: nakkerlaravivarma@gmail.com<br><br>
+    <a href="https://www.facebook.com/website_official_page" class="fa fa-facebook-official w3-hover-opacity"></a> &nbsp
+    <a href="https://www.pinterest.com/website_official_page" class="fa fa-pinterest w3-hover-opacity"></a> &nbsp
+    <a href="https://www.twitter.com/website_official_page" class="fa fa-twitter w3-hover-opacity"></a>&nbsp
+    <a href="https://www.linkedin.com/website_official_page" class="fa fa-linkedin w3-hover-opacity"></a>
+  </div>
+</footer>
+
+</body>
+</html>
